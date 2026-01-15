@@ -14,15 +14,15 @@ $(document).ready(function () {
     }
 
     $('#btn-depositar').on('click', function () {
-        redireccionar("Depositar", "../html/deposit.html");
+        redireccionar("Depositar", "deposit.html");
     });
 
     $('#btn-enviar').on('click', function () {
-        redireccionar("Enviar Dinero", "../html/sendmoney.html");
+        redireccionar("Enviar Dinero", "sendmoney.html");
     });
 
     $('#btn-movimientos').on('click', function () {
-        redireccionar("Últimos Movimientos", "../html/transactions.html");
+        redireccionar("Últimos Movimientos", "transactions.html");
     });
 
     function updateSaldoDisplay() {

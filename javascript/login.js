@@ -13,7 +13,7 @@ $(document).ready(function() {
 
                 setTimeout(function() {
                     $('body').fadeOut(500, function() {
-                        window.location.assign("../html/menu.html");
+                        window.location.assign("menu.html");
                     });
                 }, 1500); 
             });
