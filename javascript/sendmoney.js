@@ -111,7 +111,7 @@ $(document).ready(function() {
             if ($display.length) $display.text(formatCLPLocal(nuevoSaldo));
 
             showMessage('Transferencia realizada. Redirigiendo...', 'success', 1400);
-            setTimeout(() => window.location.href = 'menu.html', 1400);
+            setTimeout(() => window.location.href = '../html/menu.html', 1400);
         });
     }
 });

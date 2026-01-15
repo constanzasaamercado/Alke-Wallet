@@ -45,7 +45,7 @@ $(document).ready(function() {
         $('#depositAmount').val(''); 
 
         setTimeout(function() {
-            window.location.href = 'menu.html';
+            window.location.href = '../html/menu.html';
         }, 2000);
     });
 });

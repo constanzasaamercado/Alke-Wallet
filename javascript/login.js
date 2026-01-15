@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    const emailCorrecto = "correo@gmail.com";
+    const emailCorrecto = "correo@correo.com";
     const passwordCorrecta = '12345';
 
     $('#login').submit(function(event) {
@@ -13,7 +13,7 @@ $(document).ready(function() {
 
                 setTimeout(function() {
                     $('body').fadeOut(500, function() {
-                        window.location.assign("menu.html");
+                        window.location.assign("../html/menu.html");
                     });
                 }, 1500); 
             });

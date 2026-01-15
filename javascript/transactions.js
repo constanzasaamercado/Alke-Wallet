@@ -24,6 +24,6 @@ $(document).ready(() => {
     });
 
     $('#btn-volver').on('click', () => {
-        window.location.href = 'menu.html';
+        window.location.href = '../html/menu.html';
     });
 });
