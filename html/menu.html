@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -12,80 +12,80 @@
     <link rel="stylesheet" href="../css/menu.css">
 </head>
 
-<body>
+<body class="bg-light">
+    <div id="sidebar-overlay" class="d-none"></div>
 
-    <nav class="navbar navbar-light bg-light w-100 mb-4">
-        <div class="container-fluid">
-            <img src="../recursos/Logo-Alke-Wallet.svg" alt="Logo de la Empresa" class="img-fluid me-2"
-                style="height: 40px" />
-            <a class="navbar-brand" href="menu.html">
-                <h2 class="mb-0">Alke Wallet</h2>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="d-flex vh-100 w-100 overflow-hidden" id="wrapper">
+
+        <div id="sidebar-wrapper" class="bg-white border-end d-flex flex-column shadow-sm h-100">
+
+            <div class="sidebar-heading p-4 d-flex align-items-center border-bottom">
+                <img src="../recursos/Logo-Alke-Wallet.svg" alt="Logo" style="height: 30px" class="me-2" />
+                <span class="fw-bold fs-4 text-dark">Alke Wallet</span>
+            </div>
+
+            <div class="list-group list-group-flush flex-grow-1 overflow-auto">
+                <a href="menu.html" class="list-group-item list-group-item-action p-3 active border-0">
+                    <i class="bi bi-house-door me-2"></i> Inicio
+                </a>
+                <a href="#" id="btn-depositar" class="list-group-item list-group-item-action p-3 border-0">
+                    <i class="bi bi-plus-circle me-2"></i> Depositar
+                </a>
+                <a href="#" id="btn-enviar" class="list-group-item list-group-item-action p-3 border-0">
+                    <i class="bi bi-send me-2"></i> Enviar Dinero
+                </a>
+                <a href="#" id="btn-movimientos" class="list-group-item list-group-item-action p-3 border-0">
+                    <i class="bi bi-list-ul me-2"></i> Movimientos
+                </a>
+            </div>
+
+            <div class="mt-auto p-3 border-top bg-white">
+                <a href="#" id="btn-logout"
+                    class="nav-link text-danger d-flex align-items-center fw-bold p-2 rounded hover-effect">
+                    <i class="bi bi-box-arrow-right me-2"></i> Cerrar Sesión
+                </a>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper" class="flex-grow-1 d-flex flex-column bg-light h-100 overflow-hidden">
+            <nav class="navbar navbar-light bg-white border-bottom py-3 px-4 shadow-sm flex-shrink-0">
+                <div class="container-fluid d-flex justify-content-between">
+                    <button class="btn btn-outline-primary d-lg-none" id="menu-toggle">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <span class="text-secondary small ms-auto">Último acceso: 16 Ene 2026</span>
                 </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="menu.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" id="btn-depositar">Depositar</a>
-                            <a class="nav-link" aria-current="page" id="btn-enviar">Enviar Dinero</a>
-                            <a class="nav-link" aria-current="page" id="btn-movimientos">Últimos Movimientos</a>
-                        </li>
-                    </ul>
-                    <li class="nav-item">
-                        <a class="nav-link text-danger" href="#" id="btn-logout">Cerrar Sesión</a>
-                    </li>
+            </nav>
+
+            <div
+                class="container-fluid flex-grow-1 d-flex align-items-center justify-content-center overflow-auto position-relative">
+                <div id="mensaje-redireccion" class="position-absolute top-0 start-50 translate-middle-x mt-3 d-none"
+                    style="z-index: 1050;"></div>
+
+                <div class="card account shadow-lg border-0 p-5"
+                    style="max-width: 500px; width: 90%; border-radius: 20px;">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="bi bi-credit-card fs-1 text-primary me-3"></i>
+                        <div>
+                            <h4 class="mb-0 fw-bold">Cuenta vista</h4>
+                            <small class="text-muted">N° 123456789</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary mb-2 fs-5">Saldo disponible:</p>
+                    <h2 class="display-4 fw-bold text-primary mb-0">
+                        <span id="saldo-display"></span>
+                    </h2>
                 </div>
             </div>
         </div>
-    </nav>
-
-    <!-- <nav class="navbar navbar-light bg-light w-100 mb-4">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="menu.html">
-                <h2 class="mb-0">Alke Wallet</h2>
-            </a>
-        </div>
-    </nav> -->
-    <div class="card account m-2 p-2">
-        <div class="mb-3 p-2">
-            <i class="bi bi-credit-card icono-personalizado"></i>
-            <label for="balance">
-                <h4>Cuenta vista</h4>
-                N° 123456789
-            </label>
-
-            <p>Saldo disponible:</p>
-            <h3 class="mb-0"><span id="saldo-display">60000</span></h3>
-        </div>
-
-        <!-- <div class="buttons d-flex justify-content-evenly w-100 gap-3">
-            <a class="btn btn-primary w-100" id="btn-depositar" role="button">Depositar</a>
-            <a class="btn btn-primary w-100" id="btn-enviar" role="button">Enviar Dinero</a>
-            <a class="btn btn-primary w-100" id="btn-movimientos" role="button">Últimos Movimientos</a>
-        </div> -->
-    </div>
-
-    </div>
-    <div id="mensaje-redireccion" class="alert alert-info d-none mt-2" role="status" aria-live="polite"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../javascript/utils.js"></script>
-    <script src="../javascript/menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="../javascript/menu.js"></script>
+    
 </body>
 
 </html>

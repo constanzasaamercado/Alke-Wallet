@@ -1,22 +1,58 @@
-.account {
-    display: flex;
-    max-width: 600px;
-    width: 100%;
-    margin: 2rem;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 580px) {
-    .buttons {
-        flex-direction: column;
+#wrapper {
+    height: 100vh; 
+    width: 100vw;
+}
+
+#sidebar-wrapper {
+    min-width: 280px;
+    max-width: 280px;
+    height: 100vh; 
+    z-index: 1000;
+    transition: margin 0.3s ease-in-out;
+}
+
+#sidebar-wrapper .list-group-item.active {
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    border-left: 5px solid #0d6efd !important;
+    font-weight: 600;
+}
+
+.hover-effect:hover {
+    background-color: #fff5f5; 
+    transition: 0.2s;
+}
+
+#sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+}
+
+@media (max-width: 991.98px) {
+    #sidebar-wrapper {
+        margin-left: -280px; 
+        position: fixed;
+        height: 100%;
+        z-index: 1050;
     }
-}
 
-.nav-link {
-  cursor: pointer;
-}
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
 
-.icono-personalizado {
-    color: #150d75; /* El verde oscuro que buscas */
-    font-size: 5rem; /* También puedes cambiar el tamaño aquí */
-
+    #wrapper.toggled ~ #sidebar-overlay {
+        display: block !important;
+    }
 }
