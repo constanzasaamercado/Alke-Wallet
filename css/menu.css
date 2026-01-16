@@ -14,3 +14,9 @@
 .nav-link {
   cursor: pointer;
 }
+
+.icono-personalizado {
+    color: #150d75; /* El verde oscuro que buscas */
+    font-size: 5rem; /* También puedes cambiar el tamaño aquí */
+
+}

@@ -5,74 +5,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alke Wallet</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/login.css" />
 </head>
 
 <body>
-  <!-- Logo -->
 
-  <div class="card">
-    <div class="card-body logo-texto w-5 mx-auto mb-0" style="max-width: 400px">
-      <div class="d-flex align-items-center justify-content-center mt-2">
-        <img src="../recursos/Logo-Alke-Wallet.svg" alt="Logo de la Empresa" class="img-fluid me-2"
-          style="height: 40px" />
+  <div class="container-fluid vh-100">
+    <div class="row h-100">
+      
+      <div class="col-12 col-lg-5 d-flex align-items-center justify-content-center bg-white px-4">
+        <div class="w-100" style="max-width: 400px;">
+          
+          <div class="d-flex align-items-center mb-4">
+            <img src="../recursos/Logo-Alke-Wallet.svg" alt="Logo de la Empresa" class="img-fluid me-2" style="height: 40px" />
+            <h1 class="mb-0 fs-2">Alke Wallet</h1>
+          </div>
 
-        <h1>Alke Wallet</h1>
+          <h3 class="fw-light">Bienvenido/a</h3>
+          <h4 class="mb-4 fs-5 text-secondary">Ingresa a Alke Wallet en línea</h4>
+
+          <form id="login">
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold small">Correo electrónico</label>
+              <input type="email" class="form-control py-2" id="email" name="email" aria-describedby="emailHelp"
+                placeholder="Ingresar correo electronico" autocomplete="username" required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label fw-bold small">Contraseña</label>
+              <input type="password" class="form-control py-2" id="password" name="password" placeholder="Ingresar Contraseña"
+                autocomplete="current-password" required />
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+              <button type="submit" id="" class="btn btn-primary py-2">
+                Iniciar sesión
+              </button>
+            </div>
+
+            <div id="loader" style="display: none; text-align: center; margin-top: 20px">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <p class="mt-2 small">Iniciando sesión...</p>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="text-decoration-none small text-muted">¿Olvidaste tu contraseña?</a>
+            </div>
+          </form>
+
+        </div>
       </div>
+
+      <div class="col-lg-7 d-none d-lg-block p-0" 
+           style="background-image: url('https://wallpapers.com/images/featured/minimalista-verde-yb2hvth6ejp1k4dg.jpg'); 
+                  background-size: cover; 
+                  background-position: center;">
+          </div>
+
     </div>
   </div>
 
-  <h3 class="mb-5">Bienvenido/a</h3>
-
-  <div class="texto-ingresa-en-linea">
-    <h4>Ingresa a Alke Wallet en línea</h4>
-  </div>
-  <!-- Card -->
-  <div class="card card-body login-form">
-    <!-- <div class="container">
-      <h2>Inicio de sesión</h2>
-    </div> -->
-    <form id="login">
-      <div class="mb-3">
-        <label for="email" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
-          placeholder="Ingresar correo electronico" autocomplete="username" required />
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Ingresar Contraseña"
-          autocomplete="current-password" required />
-      </div>
-
-      <div class="d-grid">
-        <button type="submit" id="" class="btn btn-primary">
-          Iniciar sesión
-        </button>
-      </div>
-      <div id="loader" style="display: none; text-align: center; margin-top: 20px">
-        <div class="spinner"></div>
-        <p>Iniciando sesión...</p>
-      </div>
-    </form>
-  </div>
-
-  <!-- img inicio seccion  -->
-  <!-- <img
-      src="../recursos/logotipo.svg"
-      class="img-fluid d-none d-sm-block"
-      id="imagen-login"
-      alt="Imagen de inicio de sesión"
-    /> -->
-
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="../javascript/login.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

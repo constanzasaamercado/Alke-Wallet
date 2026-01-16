@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     function redireccionar(pantalla, url) {
         const mensaje = `Redirigiendo a ${pantalla}...`;
 
@@ -24,6 +25,15 @@ $(document).ready(function () {
     $('#btn-movimientos').on('click', function () {
         redireccionar("Últimos Movimientos", "transactions.html");
     });
+
+    $('#btn-logout').on('click', function (e) {
+        e.preventDefault(); 
+
+        localStorage.removeItem('usuarioLogueado'); 
+
+        redireccionar("Login", "login.html");
+    });
+
 
     function updateSaldoDisplay() {
         let saldo = localStorage.getItem('saldo');
