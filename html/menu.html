@@ -9,24 +9,34 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 <body>
-    <div class="container">
-        <h2>Alke Wallet</h2>
-    </div>
-    <div class="mb-3">
-        <label for="balance" class="form-label">Dinero en cuenta:</label>
-        <h3><span id="saldo-display">60000</span></h3>
+    
+    <nav class="navbar navbar-light bg-light w-100 mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="menu.html">
+                <h2 class="mb-0">Alke Wallet</h2>
+            </a>
+        </div>
+    </nav>
+    <div class="card account m-2 p-2">
+        <div class="mb-3 p-2">
+            <label for="balance" class="form-label">Saldo disponible</label>
+            <h3 class="mb-0"><span id="saldo-display">60000</span></h3>
+        </div>
+    
+        <div class="buttons d-flex justify-content-evenly w-100 gap-3">
+            <a class="btn btn-primary w-100" id="btn-depositar" role="button">Depositar</a>
+            <a class="btn btn-primary w-100" id="btn-enviar" role="button">Enviar Dinero</a>
+            <a class="btn btn-primary w-100" id="btn-movimientos" role="button">Últimos Movimientos</a>
+        </div>
     </div>
 
-        <a class="btn btn-primary" id="btn-depositar" role="button">Depositar</a>
-        <a class="btn btn-primary" id="btn-enviar" role="button">Enviar Dinero</a>
-        <a class="btn btn-primary" id="btn-movimientos" role="button">Últimos Movimientos</a>
-
-    </div>
-    <div id="mensaje-redireccion" class="alert alert-info d-none mt-2" role="status" aria-live="polite"></div>
-    </div>
+</div>
+<div id="mensaje-redireccion" class="alert alert-info d-none mt-2" role="status" aria-live="polite"></div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../javascript/utils.js"></script>

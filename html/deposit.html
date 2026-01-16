@@ -9,35 +9,49 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/deposit.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-light bg-light w-100 mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="menu.html">
+                <h2 class="mb-0">Alke Wallet</h2>
+            </a>
+            <div></div>
+        </div>
+    </nav>
 
-    <div class="container">
+    <div class="d-flex mb-4">
         <h2>Depositar</h2>
     </div>
-    <form>
-        <div class="mb-3">
-            <label for="depositAmount" class="form-label">Monto a depositar:</label>
-            <input type="number" class="form-control" id="depositAmount" autocomplete="off"
-                placeholder="Ingresar monto">
+
+    <!-- card saldo -->
+    <div class="card card-body mb-4">
+        <label for="saldoAmount" id="saldo" class="saldo-label">Saldo actual</label>
+        <div id="saldo-actual" class="saldo-actual">
+            <h3 id="saldo-display" class="mb-0"></h3>
         </div>
-
-        <button id="btn-realizar-deposito" class="btn btn-primary" type="button">Realizar depósito</button>
-    </form>
-    <div id="alert-container"></div>
-
-    <div>
-
-        <label for="saldoAmount" id="saldo" class="saldo-label">Saldo actual:</label>
-    </div>
-    <div id="saldo-actual" class="saldo-actual">
-        <div id="saldo-display"></div>
     </div>
 
-    <p id="confirmacion-monto" style="display:none;"></p>
+    <div class="card card-body mb-4">
+        <form>
+            <div class="mb-3">
+                <label for="depositAmount" class="form-label">Monto a depositar:</label>
+                <input type="number" class="form-control" id="depositAmount" autocomplete="off"
+                    placeholder="Ingresar monto">
+            </div>
+    
+            <button id="btn-realizar-deposito" class="btn btn-primary" type="button">Realizar depósito</button>
+        </form>
+    </div>
+    <div id="alert-container" role="status" aria-live="polite"></div>
+
+
+
+    <!-- <p id="confirmacion-monto" style="display:none;"></p>
     <div id="mensaje-redireccion" class="alert alert-info d-none mt-2" role="status" aria-live="polite"></div>
-    </div>
+    </div> -->
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

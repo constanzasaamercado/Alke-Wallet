@@ -1,0 +1,12 @@
+.account {
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    margin: 2rem;
+}
+
+@media screen and (max-width: 580px) {
+    .buttons {
+        flex-direction: column;
+    }
+}

@@ -1,13 +1,24 @@
-html{
- margin: 12px 16px;
+/* html{
 
-}
+} */
 
 body {
   display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: #F2F2F7;
+}
+
+.card {
+  border: none;
+}
+
+.account {
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    margin: 2rem;
 }
 
 .contenedor {

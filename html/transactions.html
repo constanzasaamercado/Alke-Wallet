@@ -12,24 +12,35 @@
 </head>
 
 <body>
-    <h2>Últimos Movimientos</h2>
-
-    <table border="1" style="width:100%; text-align: left; border-collapse: collapse;">
-        <thead>
-            <tr style="background-color: #f2f2f2;">
-                <th>Fecha</th>
-                <th>Tipo</th>
-                <th>Detalle</th>
-                <th>Monto</th>
-            </tr>
-        </thead>
-        <tbody id="tabla-movimientos">
-        </tbody>
-    </table>
-
-    <button class="btn btn-secondary" onclick="window.location.href='menu.html'">Volver al Menú Principal</button>
-
+    <nav class="navbar navbar-light bg-light w-100 mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="menu.html">
+                <h2 class="mb-0">Alke Wallet</h2>
+            </a>
+        </div>
+    </nav>
+    
+    <div class="card card-body gap-4">
+        <h2>Últimos Movimientos</h2>
+        <table border="1" style="width:100%; text-align: left; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Detalle</th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-movimientos">
+            </tbody>
+        </table>
+    
+        <button class="btn btn-secondary" onclick="window.location.href='menu.html'">Volver al Menú Principal</button>
+    
+        </div>
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../javascript/utils.js"></script>
