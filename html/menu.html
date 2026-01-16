@@ -13,30 +13,63 @@
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-light bg-light w-100 mb-4">
+        <div class="container-fluid">
+            <img src="../recursos/Logo-Alke-Wallet.svg" alt="Logo de la Empresa" class="img-fluid me-2"
+                style="height: 40px" />
+            <a class="navbar-brand" href="menu.html">
+                <h2 class="mb-0">Alke Wallet</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="menu.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" id="btn-depositar">Depositar</a>
+                            <a class="nav-link" aria-current="page" id="btn-enviar">Enviar Dinero</a>
+                            <a class="nav-link" aria-current="page" id="btn-movimientos">Últimos Movimientos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <nav class="navbar navbar-light bg-light w-100 mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="menu.html">
                 <h2 class="mb-0">Alke Wallet</h2>
             </a>
         </div>
-    </nav>
+    </nav> -->
     <div class="card account m-2 p-2">
         <div class="mb-3 p-2">
             <label for="balance" class="form-label">Saldo disponible</label>
             <h3 class="mb-0"><span id="saldo-display">60000</span></h3>
         </div>
-    
-        <div class="buttons d-flex justify-content-evenly w-100 gap-3">
+
+        <!-- <div class="buttons d-flex justify-content-evenly w-100 gap-3">
             <a class="btn btn-primary w-100" id="btn-depositar" role="button">Depositar</a>
             <a class="btn btn-primary w-100" id="btn-enviar" role="button">Enviar Dinero</a>
             <a class="btn btn-primary w-100" id="btn-movimientos" role="button">Últimos Movimientos</a>
-        </div>
+        </div> -->
     </div>
 
-</div>
-<div id="mensaje-redireccion" class="alert alert-info d-none mt-2" role="status" aria-live="polite"></div>
-</div>
+    </div>
+    <div id="mensaje-redireccion" class="alert alert-info d-none mt-2" role="status" aria-live="polite"></div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../javascript/utils.js"></script>

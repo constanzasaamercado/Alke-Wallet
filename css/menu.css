@@ -10,3 +10,7 @@
         flex-direction: column;
     }
 }
+
+.nav-link {
+  cursor: pointer;
+}
