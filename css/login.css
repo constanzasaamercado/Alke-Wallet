@@ -1,0 +1,16 @@
+.login-form {
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+.texto-ingresa-en-linea {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.imagen-login {
+    alig
+}

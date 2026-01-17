@@ -1,18 +1,31 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
     function mostrarSaldoActual() {
         let saldo = localStorage.getItem('saldo') || "0";
-        let saldoFormateado = new Intl.NumberFormat('es-CL', { 
-            style: 'currency', 
-            currency: 'CLP', 
-            maximumFractionDigits: 0 
+        let saldoFormateado = new Intl.NumberFormat('es-CL', {
+            style: 'currency',
+            currency: 'CLP',
+            maximumFractionDigits: 0
         }).format(saldo);
-        
+
         $('#saldo-display').text(saldoFormateado);
+    }
+
+    function redireccionar(pantalla, url) {
+        const mensaje = `Redirigiendo a ${pantalla}...`;
+        $('#mensaje-redireccion').text(mensaje).removeClass('d-none alert-danger').addClass('alert alert-info').fadeIn();
+        setTimeout(function () { window.location.href = url; }, 1500);
     }
 
     mostrarSaldoActual();
 
-    $('#btn-realizar-deposito').on('click', function(e) {
+    $('#btn-logout').on('click', function (e) {
+        e.preventDefault();
+        localStorage.removeItem('usuarioLogueado');
+        redireccionar("Login", "login.html");
+    });
+
+    $('#btn-realizar-deposito').on('click', function (e) {
         e.preventDefault();
 
         const montoIngresado = parseInt($('#depositAmount').val());
@@ -27,6 +40,7 @@ $(document).ready(function() {
         localStorage.setItem('saldo', nuevoSaldo);
 
         if (typeof registrarMovimiento === 'function') {
+
             const detalle = `Depósito ${formatCLP(montoIngresado)}`;
             registrarMovimiento('Depósito', montoIngresado, detalle);
         }
@@ -38,13 +52,11 @@ $(document).ready(function() {
             </div>`;
 
         $('#alert-container').html(mensajeExito);
-
-        $('#confirmacion-monto').text(`Último depósito realizado: $${montoIngresado}`).fadeIn();
-
+        
         mostrarSaldoActual();
-        $('#depositAmount').val(''); 
+        $('#depositAmount').val('');
 
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = 'menu.html';
         }, 2000);
     });
