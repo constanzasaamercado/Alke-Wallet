@@ -8,6 +8,12 @@ $(document).ready(function() {
     const $datalist = $('#datalistOptions');
     const $searchResults = $('#search-results');
 
+    $('#btn-logout').on('click', function (e) {
+        e.preventDefault();
+        localStorage.removeItem('usuarioLogueado'); 
+        redireccionar("Login", "login.html"); 
+    });
+
     function formatCLPLocal(value) {
         const n = Math.round(Number(value) || 0);
         if (typeof formatCLP === 'function') return formatCLP(n);
@@ -114,7 +120,7 @@ $(document).ready(function() {
             setTimeout(() => window.location.href = 'menu.html', 1400);
         });
     }
-});
+}); 
 
 function registrarMovimiento(tipo, monto, detalle) {
     let historial = JSON.parse(localStorage.getItem('movimientos')) || [];
@@ -130,18 +136,26 @@ function registrarMovimiento(tipo, monto, detalle) {
     localStorage.setItem('movimientos', JSON.stringify(historial));
 }
 
-    function showMessage(text, type = 'info', timeout = 1400) {
-        let $el = $('#mensaje-redireccion');
-        if (!$el.length) {
-            $el = $('<div>').attr({
-                'id': 'mensaje-redireccion',
-                'role': 'status',
-                'aria-live': 'polite'
-            }).addClass('alert alert-info d-none mt-2');
-            $('body').append($el);
-        }
-        $el.text(text);
-        $el.removeClass('d-none alert-info alert-success alert-warning alert-danger');
-        $el.addClass('alert ' + `alert-${type}`);
-        if (timeout > 0) setTimeout(() => $el.addClass('d-none'), timeout);
+function showMessage(text, type = 'info', timeout = 1400) {
+    let $el = $('#mensaje-redireccion');
+    if (!$el.length) {
+        $el = $('<div>').attr({
+            'id': 'mensaje-redireccion',
+            'role': 'status',
+            'aria-live': 'polite'
+        }).addClass('alert alert-info d-none mt-2');
+        $('body').append($el);
     }
+    $el.text(text);
+    $el.removeClass('d-none alert-info alert-success alert-warning alert-danger');
+    $el.addClass('alert ' + `alert-${type}`);
+    if (timeout > 0) setTimeout(() => $el.addClass('d-none'), timeout);
+}
+
+function redireccionar(pantalla, url) {
+    const mensaje = `Redirigiendo a ${pantalla}...`;
+    showMessage(mensaje, 'info', 1500);
+    setTimeout(function () { 
+        window.location.href = url; 
+    }, 1500);
+}
